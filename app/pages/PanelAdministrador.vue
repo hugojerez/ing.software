@@ -12,6 +12,7 @@
           <v-btn to="verDatosCliente" color="primary">
             Ver datos del cliente
           </v-btn>
+          <v-btn to="verCotizacion" color="primary"> Editar cotización </v-btn>
           <v-btn to="verCotizacion" color="primary"> Ver cotización </v-btn>
           <v-btn color="primary"> Eliminar </v-btn>
         </div>
