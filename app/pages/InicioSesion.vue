@@ -58,6 +58,8 @@ export default {
 
               alert('login exitoso')
             }
+          } else {
+            alert('El usuario no existe')
           }
         })
     },

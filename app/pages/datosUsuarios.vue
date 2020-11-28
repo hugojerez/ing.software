@@ -14,7 +14,7 @@
       <v-text-field v-model="model.correo" label="Correo electrónico" />
       <v-text-field v-model="model.password" type="password" label="Clave" />
       <div class="text-right">
-        <v-btn to="cotizacionFinalizada" color="primary"> Continuar </v-btn>
+        <v-btn color="primary" @click="send"> Continuar </v-btn>
       </div>
     </div>
   </v-container>
@@ -30,9 +30,8 @@ export default {
     send() {
       window.$nuxt.$axios
         .$post('https://roje.cl/api/tests', { type: 'userdata', ...this.model })
-        .then(({ data }) => {
-          if (data.length) {
-          }
+        .then(() => {
+          this.$router.push({ path: 'cotizacionFinalizada' })
         })
     },
   },
