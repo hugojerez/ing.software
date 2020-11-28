@@ -9,7 +9,7 @@
     <div v-for="elemento in elementos" :key="elemento.text" class="">
       <v-row no-gutters>
         <v-col cols="auto" class="pr-4">
-          <v-checkbox />
+          <v-checkbox v-model="model[elemento.text]" />
         </v-col>
         <v-col>
           <div class="text-h5">
@@ -20,7 +20,7 @@
       </v-row>
     </div>
     <div class="text-right">
-      <v-btn color="primary" x-large to="/datosUsuarios"> Continuar </v-btn>
+      <v-btn color="primary" x-large @click="submit"> Continuar </v-btn>
     </div>
   </v-container>
 </template>
@@ -28,6 +28,7 @@
 export default {
   data() {
     return {
+      model: {},
       elementos: [
         {
           quantity: 0,
@@ -134,6 +135,16 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    submit() {
+      this.$router.push({ path: '/datosUsuarios' })
+      window.$nuxt.$axios.$post('https://roje.cl/api/tests', {
+        type: 'send_cotizacion',
+        user: localStorage.user,
+        model: this.model,
+      })
+    },
   },
 }
 </script>

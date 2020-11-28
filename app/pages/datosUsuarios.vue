@@ -8,11 +8,11 @@
     <v-divider class="my-5" />
 
     <div style="max-width: 500px" class="">
-      <v-text-field v-model="nombre" label="Nombres" />
-      <v-text-field v-model="apellido" label="Apellidos" />
-      <v-text-field v-model="direccion" label="Dirección" />
-      <v-text-field v-model="correo" label="Correo electrónico" />
-      <v-text-field v-model="password" type="password" label="Clave" />
+      <v-text-field v-model="model.nombre" label="Nombres" />
+      <v-text-field v-model="model.apellido" label="Apellidos" />
+      <v-text-field v-model="model.direccion" label="Dirección" />
+      <v-text-field v-model="model.correo" label="Correo electrónico" />
+      <v-text-field v-model="model.password" type="password" label="Clave" />
       <div class="text-right">
         <v-btn to="cotizacionFinalizada" color="primary"> Continuar </v-btn>
       </div>
@@ -25,6 +25,16 @@ export default {
     return {
       model: {},
     }
+  },
+  methods: {
+    send() {
+      window.$nuxt.$axios
+        .$post('https://roje.cl/api/tests', { type: 'userdata', ...model })
+        .then(({ data }) => {
+          if (data.length) {
+          }
+        })
+    },
   },
 }
 </script>

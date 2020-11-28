@@ -22,14 +22,14 @@
       ]"
     ></v-select>
     <div class="text-right">
-      <v-btn v-if="model.tipo === 'usuario'" to="Cotizador" color="primary"
+      <v-btn v-if="model.tipo === 'usuario'" color="primary" @click="login()"
         >Acceder como usuario</v-btn
       >
-      <v-btn v-if="model.tipo === 'admin'" to="Admin" color="primary"
+      <v-btn v-else-if="model.tipo === 'admin'" color="primary" @click="login()"
         >Acceder como usuario</v-btn
       >
 
-      <v-btn v-else to="PanelAdministrador" color="primary"
+      <v-btn v-else color="primary" @click="login()"
         >Acceder como recepcionista</v-btn
       >
     </div>
@@ -39,6 +39,28 @@
 export default {
   data() {
     return { model: { usuario: 'usuario' } }
+  },
+  methods: {
+    login() {
+      const tipo = this.model.tipo
+      window.$nuxt.$axios
+        .$get('https://roje.cl/api/tests?email=' + this.model.user)
+        .then(({ data }) => {
+          if (data.length) {
+            if (data[0].clave === this.model.clave) {
+              if (tipo === 'admin') {
+                this.$router.push({ path: 'Admin' })
+              } else if (tipo === 'usuario') {
+                this.$router.push({ path: 'Cotizador' })
+              } else {
+                this.$router.push({ path: 'PanelAdministrador' })
+              }
+
+              alert('login exitoso')
+            }
+          }
+        })
+    },
   },
 }
 </script>
