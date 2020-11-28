@@ -29,7 +29,11 @@ export default {
   methods: {
     send() {
       window.$nuxt.$axios
-        .$post('https://roje.cl/api/tests', { type: 'userdata', ...this.model })
+        .$patch('https://roje.cl/api/tests/' + localStorage.last, {
+          type: 'userdata',
+          ...this.model,
+          userEmail: localStorage.myUser,
+        })
         .then(() => {
           this.$router.push({ path: 'cotizacionFinalizada' })
         })

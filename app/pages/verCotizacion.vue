@@ -89,3 +89,11 @@
     >
   </v-container>
 </template>
+<script>
+export default {
+  mounted() {
+    const id = this.$route.id
+    this.$axios.$get('https://roje.cl/api/tests/' + id)
+  },
+}
+</script>

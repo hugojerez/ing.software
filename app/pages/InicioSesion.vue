@@ -48,6 +48,7 @@ export default {
         .then(({ data }) => {
           if (data.length) {
             if (data[0].clave === this.model.clave) {
+              localStorage.myUser = data[0].email
               if (tipo === 'admin') {
                 this.$router.push({ path: 'Admin' })
               } else if (tipo === 'usuario') {
@@ -55,8 +56,9 @@ export default {
               } else {
                 this.$router.push({ path: 'PanelAdministrador' })
               }
-
               alert('login exitoso')
+            } else {
+              alert('contraseña inválida')
             }
           } else {
             alert('El usuario no existe')
