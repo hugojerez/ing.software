@@ -29,7 +29,7 @@ export default {
   methods: {
     send() {
       window.$nuxt.$axios
-        .$post('https://roje.cl/api/tests', { type: 'userdata', ...model })
+        .$post('https://roje.cl/api/tests', { type: 'userdata', ...this.model })
         .then(({ data }) => {
           if (data.length) {
           }
