@@ -1,19 +1,40 @@
 <template>
   <v-container>
-    <div class="text-h4">Ver cotización</div>
+    <div class="text-h4">Editar cotización</div>
     <v-btn to="PanelAdministrador" color="primary" class="my-5">
       Volver atrás</v-btn
     >
     <v-btn to="verDatosCliente" color="primary"> Ver datos del cliente </v-btn>
     <div class="title">Información de la solicitud de cotización</div>
+
     <v-simple-table>
       <template v-slot:default>
         <tbody>
           <tr>
+            <td>Nombre</td>
+            <td><v-text-field :value="cotizacion.nombre" /></td>
+          </tr>
+          <tr>
+            <td>Apellidos</td>
+            <td><v-text-field :value="cotizacion.apellido" /></td>
+          </tr>
+          <tr>
+            <td>Direccion</td>
+            <td><v-text-field :value="cotizacion.direccion" /></td>
+          </tr>
+
+          <tr>
+            <td>Rut</td>
+            <td><v-text-field :value="cotizacion.rut" /></td>
+          </tr>
+
+          <tr>
+            <td>Correo</td>
+            <td><v-text-field :value="cotizacion.correo" /></td>
+          </tr>
+          <tr>
             <td>Fecha</td>
-            <td>
-              {{ new Date(cotizacion.createdAt).toLocaleString() }}
-            </td>
+            <td><v-text-field :value="cotizacion.createdAt" /></td>
           </tr>
         </tbody>
       </template>
@@ -37,9 +58,14 @@
           </thead>
           <tbody>
             <tr v-for="elemento in elegido" :key="elemento.name">
-              <td>{{ elemento.title }}</td>
+              <td><v-text-field :value="elemento.title" /></td>
+
               <td>1</td>
               <td>${{ Number(elemento.value).toLocaleString('es') }}</td>
+              <td>
+                <v-btn color="blue" dark> Editar</v-btn>
+                <v-btn color="red" dark> Eliminar</v-btn>
+              </td>
             </tr>
             <tr>
               <td></td>

@@ -19,19 +19,12 @@
         <v-dialog scrollable max-width="300px">
           <template v-slot:activator="{ on, attrs }">
             <div class="text-right">
-              <v-btn
-                x-large
-                color="primary"
-                class="my-4"
-                dark
-                v-bind="attrs"
-                v-on="on"
-              >
+              <v-btn x-large color="primary" dark v-bind="attrs" v-on="on">
                 Agregar recepcionista
               </v-btn>
             </div>
           </template>
-          <v-card>
+          <v-card class="my-4 pa-5">
             <div class="text-h4">Agregar</div>
 
             <CompCrearUsuario role="admin" />

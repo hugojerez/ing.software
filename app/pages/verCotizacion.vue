@@ -32,13 +32,6 @@
             <td>Correo</td>
             <td>{{ cotizacion.correo }}</td>
           </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
-
-    <v-simple-table>
-      <template v-slot:default>
-        <tbody>
           <tr>
             <td>Fecha</td>
             <td>

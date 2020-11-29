@@ -5,7 +5,30 @@
       prepend-icon="mdi-magnify"
     ></v-text-field>
     <div class="text-right">
-      <v-btn color="primary " class="ma-2" x-large>Agregar</v-btn>
+      <v-dialog scrollable max-width="300px">
+        <template v-slot:activator="{ on, attrs }">
+          <div class="text-right">
+            <v-btn
+              x-large
+              color="primary"
+              class="my-4"
+              dark
+              v-bind="attrs"
+              v-on="on"
+            >
+              Agregar servicio
+            </v-btn>
+          </div>
+        </template>
+        <v-card class="pa-4">
+          <div class="text-h4">Modificar servicio</div>
+
+          <v-textarea label="Nombre del servicio" />
+          <v-text-field label="Precio del servicio"> </v-text-field>
+
+          <v-btn type="primary" color="primary"> Agregar </v-btn>
+        </v-card>
+      </v-dialog>
     </div>
     <div v-for="elemento in elementos" :key="elemento.name" class="">
       <v-row>
