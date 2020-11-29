@@ -5,36 +5,30 @@
       Volver atrás</v-btn
     >
     <v-btn to="verCotizacion" color="primary"> Ver cotización </v-btn>
-
     <v-simple-table>
       <template v-slot:default>
         <tbody>
           <tr>
             <td>Nombre</td>
-            <td>JUAN PEDRO</td>
+            <td>{{ cotizacion.nombre }}</td>
           </tr>
           <tr>
             <td>Apellidos</td>
-            <td>RAULENCIO GUTIREREZ</td>
+            <td>{{ cotizacion.apellido }}</td>
           </tr>
           <tr>
             <td>Direccion</td>
-            <td>
-              Avenida Alfalba, Sepeta, Región Metropolitana, Santiago, Chile
-            </td>
+            <td>{{ cotizacion.direccion }}</td>
           </tr>
+
           <tr>
-            <td>Teléfono</td>
-            <td>+569828323233</td>
+            <td>Rut</td>
+            <td>{{ cotizacion.rut }}</td>
           </tr>
 
           <tr>
             <td>Correo</td>
-            <td>juanpabloraul@gmail.com</td>
-          </tr>
-          <tr>
-            <td>RUT</td>
-            <td>12.432.543-3</td>
+            <td>{{ cotizacion.correo }}</td>
           </tr>
         </tbody>
       </template>
@@ -44,3 +38,24 @@
     >
   </v-container>
 </template>
+<script>
+import { elementos } from './Cotizador.vue'
+export default {
+  data() {
+    return {
+      elegido: [],
+      cotizacion: {},
+    }
+  },
+  async mounted() {
+    const id = this.$route.query.id
+    const mydata = await this.$axios.$get('https://roje.cl/api/tests/' + id)
+    this.cotizacion = mydata
+    for (const elemento of elementos) {
+      if (mydata.model[elemento.text]) {
+        this.elegido.push(elemento)
+      }
+    }
+  },
+}
+</script>

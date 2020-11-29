@@ -1,15 +1,33 @@
 <template>
   <div class="">
+    <div class="text-h1">Panel super-admin</div>
     <v-tabs>
-      <v-tab>Gestionar recepcionistas</v-tab>
-      <v-tab>Gestionar servicios</v-tab>
-      <v-tab>Gestionar productos</v-tab>
+      <v-tab>Listado global de cotizaciones</v-tab>
+      <v-tab>Todos los usuarios</v-tab>
+      <v-tab>Crear Recepcionista</v-tab>
+      <v-tab>Productos / Servicios</v-tab>
       <v-spacer />
       <v-tab @click="$router.push({ path: '/' })">Salir</v-tab>
 
-      <v-tab-item> dx </v-tab-item>
-      <v-tab-item> dx2 </v-tab-item>
-      <v-tab-item> dx 3</v-tab-item>
+      <v-tab-item> <CompCotizacionList /></v-tab-item>
+      <v-tab-item> <CompUserList /></v-tab-item>
+      <v-tab-item> <CompCrearUsuario role="admin" /></v-tab-item>
+      <v-tab-item> <CompProser /></v-tab-item>
     </v-tabs>
   </div>
 </template>
+
+<script>
+import CompUserList from './CompUserList'
+import CompCrearUsuario from './CompCrearUsuario'
+import CompProser from './CompProser'
+import CompCotizacionList from './CompCotizacionList'
+export default {
+  components: {
+    CompProser,
+    CompCotizacionList,
+    CompUserList,
+    CompCrearUsuario,
+  },
+}
+</script>

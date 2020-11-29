@@ -10,6 +10,7 @@
     <div style="max-width: 500px" class="">
       <v-text-field v-model="model.nombre" label="Nombres" />
       <v-text-field v-model="model.apellido" label="Apellidos" />
+      <v-text-field v-model="model.rut" label="Rut" />
       <v-text-field v-model="model.direccion" label="Dirección" />
       <v-text-field v-model="model.correo" label="Correo electrónico" />
       <v-text-field v-model="model.password" type="password" label="Clave" />
@@ -30,7 +31,6 @@ export default {
     send() {
       window.$nuxt.$axios
         .$patch('https://roje.cl/api/tests/' + localStorage.last, {
-          type: 'userdata',
           ...this.model,
           userEmail: localStorage.myUser,
         })

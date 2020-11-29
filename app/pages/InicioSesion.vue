@@ -22,6 +22,8 @@
       ]"
     ></v-select>
     <div class="text-right">
+      <v-btn color="primary" @click="$router.push({ path: '/' })">Salir</v-btn>
+
       <v-btn v-if="model.tipo === 'usuario'" color="primary" @click="login()"
         >Acceder como usuario</v-btn
       >
@@ -44,7 +46,9 @@ export default {
     login() {
       const tipo = this.model.tipo
       window.$nuxt.$axios
-        .$get('https://roje.cl/api/tests?email=' + this.model.user)
+        .$get(
+          'https://roje.cl/api/tests?type=userEntity&email=' + this.model.user
+        )
         .then(({ data }) => {
           if (data.length) {
             if (data[0].clave === this.model.clave) {
