@@ -1,20 +1,29 @@
 <template>
   <div class="">
-    <div v-for="(elemento, index) in 20" :key="index" class="">
+    <v-text-field
+      placeholder="Buscar"
+      prepend-icon="mdi-magnify"
+    ></v-text-field>
+    <div class="text-right">
+      <v-btn color="primary " class="ma-2" x-large>Agregar</v-btn>
+    </div>
+
+    <div v-for="(elemento, index) in 0" :key="index" class="">
       <v-row>
         <v-col>
-          <v-text-field label="tipo" value="PRODUCTOS" />
+          <v-text-field disabled label="tipo" value="PRODUCTOS" />
         </v-col>
 
         <v-col>
-          <v-text-field label="elemento" value=" " />
+          <v-text-field disabled label="elemento" value=" " />
         </v-col>
 
         <v-col>
-          <v-text-field label="precio" value=" "> </v-text-field>
+          <v-text-field disabled label="precio" value=" "> </v-text-field>
         </v-col>
       </v-row>
-
+      <v-btn color="primary " class="ma-2">Modificar</v-btn>
+      <v-btn color="primary " class="ma-2">Eliminar</v-btn>
       <v-divider />
     </div>
   </div>

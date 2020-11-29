@@ -6,6 +6,36 @@
     >
     <v-btn to="verDatosCliente" color="primary"> Ver datos del cliente </v-btn>
     <div class="title">Información de la solicitud de cotización</div>
+
+    <v-simple-table>
+      <template v-slot:default>
+        <tbody>
+          <tr>
+            <td>Nombre</td>
+            <td>{{ cotizacion.nombre }}</td>
+          </tr>
+          <tr>
+            <td>Apellidos</td>
+            <td>{{ cotizacion.apellido }}</td>
+          </tr>
+          <tr>
+            <td>Direccion</td>
+            <td>{{ cotizacion.direccion }}</td>
+          </tr>
+
+          <tr>
+            <td>Rut</td>
+            <td>{{ cotizacion.rut }}</td>
+          </tr>
+
+          <tr>
+            <td>Correo</td>
+            <td>{{ cotizacion.correo }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
+
     <v-simple-table>
       <template v-slot:default>
         <tbody>

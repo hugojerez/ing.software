@@ -6,6 +6,7 @@
     <v-text-field v-model="model.name" label="Nombres" name="name" />
     <v-text-field v-model="model.lastname" label="Apellidos" name="lastname" />
     <v-text-field v-model="model.rut" label="Rut" name="rut" />
+    <v-text-field v-model="model.telefono" label="Teléfono" name="telefono" />
 
     <v-text-field
       v-model="model.password"
@@ -41,6 +42,7 @@ export default {
           type: 'userEntity',
           name: this.model.name,
           lastname: this.model.lastname,
+          telefono: this.model.telefono,
           rut: this.model.rut,
           email: this.model.email,
           role: this.role,

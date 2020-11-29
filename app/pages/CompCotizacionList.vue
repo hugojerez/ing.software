@@ -13,22 +13,35 @@
         <v-card-content>
           Cotización realizada a las
           {{ new Date(i.createdAt).toLocaleString() }}
+          <v-alert type="warning" class="my-12"
+            >Estado: ⚠️ Pendiente de revisión</v-alert
+          >
         </v-card-content>
         <div class="my-4 text-right">
-          <v-btn :to="`verDatosCliente?id=${i._id}`" color="primary">
+          <!--  <v-btn :to="`verDatosCliente?id=${i._id}`" color="primary">
             Ver datos del cliente
-          </v-btn>
+          </v-btn>-->
           <!--v-btn :to="`verCotizacion?id=${i._id}`" color="primary">
             Editar cotización
           </v-btn>-->
-          <v-btn :to="`verCotizacion?id=${i._id}`" color="primary">
-            Editar cotizaciónπ
+          <v-btn
+            v-if="mode != 'user'"
+            :to="`verCotizacion?id=${i._id}`"
+            color="primary"
+          >
+            Editar cotización
           </v-btn>
 
-          <v-btn :to="`verCotizacion?id=${i._id}`" color="primary">
+          <v-btn
+            v-if="mode != 'user'"
+            :to="`verCotizacion?id=${i._id}`"
+            color="primary"
+          >
             Ver cotización
           </v-btn>
-          <v-btn color="primary" @click="remove(i._id)"> Eliminar </v-btn>
+          <v-btn v-if="mode != 'user'" color="primary" @click="remove(i._id)">
+            Eliminar
+          </v-btn>
         </div>
       </v-card>
     </div>
@@ -37,6 +50,8 @@
 <script>
 export default {
   props: {
+    mode: { type: String, default: '' },
+
     filter: { type: String, default: '' },
   },
   data() {

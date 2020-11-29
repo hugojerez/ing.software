@@ -4,15 +4,18 @@
 
     <v-tabs>
       <v-tab>Consultar servicios</v-tab>
-      <v-tab>Cotizaciones solicitadas</v-tab>
+      <v-tab>Consultar productos</v-tab>
+      <v-tab>Ver el estado de las cotizaciones</v-tab>
       <v-spacer />
       <v-tab @click="$router.push({ path: '/' })">Salir</v-tab>
 
       <v-tab-item> <CompCotizador /></v-tab-item>
-      <v-tab-item> <CompCotizacionList :filter="filter" /></v-tab-item>
+      <v-tab-item> <CompCotizador /></v-tab-item>
+      <v-tab-item>
+        <CompCotizacionList mode="user" :filter="filter"
+      /></v-tab-item>
     </v-tabs>
   </div>
-  PRODUCTO
 </template>
 
 <script>
