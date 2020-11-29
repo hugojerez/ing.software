@@ -26,7 +26,7 @@
           </v-btn>-->
           <v-btn
             v-if="mode != 'user'"
-            :to="`verCotizacion?id=${i._id}`"
+            :to="`editarCotizacion?id=${i._id}`"
             color="primary"
           >
             Editar cotización
