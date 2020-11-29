@@ -60,7 +60,7 @@ export default {
               } else {
                 this.$router.push({ path: 'PanelAdministrador' })
               }
-              alert('login exitoso')
+              alert('Inicio de sesión exitoso')
             } else {
               alert('contraseña inválida')
             }
