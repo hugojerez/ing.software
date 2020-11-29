@@ -3,7 +3,7 @@
     <div class="text-h1">Panel cliente</div>
 
     <v-tabs>
-      <v-tab>Solicitar cotización</v-tab>
+      <v-tab>Consultar servicios</v-tab>
       <v-tab>Cotizaciones solicitadas</v-tab>
       <v-spacer />
       <v-tab @click="$router.push({ path: '/' })">Salir</v-tab>
@@ -12,6 +12,7 @@
       <v-tab-item> <CompCotizacionList :filter="filter" /></v-tab-item>
     </v-tabs>
   </div>
+  PRODUCTO
 </template>
 
 <script>

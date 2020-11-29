@@ -13,6 +13,8 @@
           {{ new Date(i.createdAt).toLocaleString() }}
         </v-card-content>
         <div class="my-4 text-right">
+          <v-btn color="primary"> Modificar </v-btn>
+
           <v-btn color="primary" @click="remove(i._id)"> Eliminar </v-btn>
         </div>
       </v-card>

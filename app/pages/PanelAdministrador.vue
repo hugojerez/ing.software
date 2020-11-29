@@ -12,8 +12,10 @@
 </template>
 
 <script>
+import CompUserList from './CompUserList'
+import CompCrearUsuario from './CompCrearUsuario'
 import CompCotizacionList from './CompCotizacionList'
 export default {
-  components: { CompCotizacionList },
+  components: { CompCotizacionList, CompUserList, CompCrearUsuario },
 }
 </script>

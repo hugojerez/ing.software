@@ -22,6 +22,10 @@
             Editar cotización
           </v-btn>-->
           <v-btn :to="`verCotizacion?id=${i._id}`" color="primary">
+            Editar cotizaciónπ
+          </v-btn>
+
+          <v-btn :to="`verCotizacion?id=${i._id}`" color="primary">
             Ver cotización
           </v-btn>
           <v-btn color="primary" @click="remove(i._id)"> Eliminar </v-btn>
