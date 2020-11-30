@@ -4,7 +4,6 @@
     <v-btn to="PanelAdministrador" color="primary" class="my-5">
       Volver atrás</v-btn
     >
-    <v-btn to="verDatosCliente" color="primary"> Ver datos del cliente </v-btn>
     <div class="title">Información de la solicitud de cotización</div>
 
     <v-simple-table>
