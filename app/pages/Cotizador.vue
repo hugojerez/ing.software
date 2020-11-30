@@ -10,7 +10,7 @@
       <v-tab @click="$router.push({ path: '/' })">Salir</v-tab>
 
       <v-tab-item> <CompCotizador /></v-tab-item>
-      <v-tab-item> <CompCotizador /></v-tab-item>
+      <v-tab-item> <CompCotizador2 /></v-tab-item>
       <v-tab-item>
         <CompCotizacionList mode="user" :filter="filter"
       /></v-tab-item>
@@ -21,10 +21,11 @@
 <script>
 import CompCotizacionList from './CompCotizacionList'
 import CompCotizador, { elementos } from './CompCotizador'
+import CompCotizador2 from './CompCotizador2'
 
 export { elementos }
 export default {
-  components: { CompCotizacionList, CompCotizador },
+  components: { CompCotizacionList, CompCotizador, CompCotizador2 },
   data() {
     return { filter: '' }
   },

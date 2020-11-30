@@ -6,19 +6,9 @@
       contratar
     </div>
     <v-divider class="my-5" />
-    <div v-for="elemento in elementos" :key="elemento.text" class="">
-      <v-row no-gutters>
-        <v-col cols="auto" class="pr-4">
-          <v-checkbox v-model="model[elemento.text]" x-large />
-        </v-col>
-        <v-col>
-          <div class="text-h5">
-            {{ elemento.title }}
-          </div>
-          {{ elemento.text }}
-        </v-col>
-      </v-row>
-    </div>
+
+    <v-alert type="info"> No hay productos disponibles</v-alert>
+
     <div class="text-right">
       <v-btn color="primary" x-large @click="submit"> Continuar </v-btn>
     </div>
