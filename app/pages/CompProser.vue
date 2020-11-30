@@ -21,7 +21,7 @@
           </div>
         </template>
         <v-card class="pa-4">
-          <div class="text-h4">Modificar servicio</div>
+          <div class="text-h4">Agregar servicio</div>
 
           <v-textarea label="Nombre del servicio" />
           <v-text-field label="Precio del servicio"> </v-text-field>
