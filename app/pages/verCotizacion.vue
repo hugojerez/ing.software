@@ -29,6 +29,11 @@
           </tr>
 
           <tr>
+            <td>Teléfono</td>
+            <td>{{ cotizacion.telefono }}</td>
+          </tr>
+
+          <tr>
             <td>Correo</td>
             <td>{{ cotizacion.correo }}</td>
           </tr>
