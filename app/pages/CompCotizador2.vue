@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$router.push({ path: '/cotizacionFinalizada' })
+      this.$router.push({ path: '/datosUsuarios' })
       window.$nuxt.$axios
         .$post('https://roje.cl/api/tests', {
           type: 'send_cotizacion',

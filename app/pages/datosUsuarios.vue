@@ -1,31 +1,22 @@
 <template>
-  <v-container>
-    <div class="display-3">Ingresa tus datos</div>
-    <div class="text-h4">
-      Estimado usuario para poder contactarlo necesitamos que rellene los
-      siguientes campos
-    </div>
-    <v-divider class="my-5" />
-
-    <div style="max-width: 500px" class="">
-      <v-text-field v-model="model.nombre" label="Nombres" />
-      <v-text-field v-model="model.apellido" label="Apellidos" />
-      <v-text-field v-model="model.rut" label="Rut" />
-      <v-text-field v-model="model.direccion" label="Dirección" />
-      <v-text-field v-model="model.correo" label="Correo electrónico" />
-      <v-text-field v-model="model.password" type="password" label="Clave" />
-      <div class="text-right">
-        <v-btn color="primary" @click="send"> Continuar </v-btn>
-      </div>
-    </div>
-  </v-container>
+  <v-container> Cargando... </v-container>
 </template>
 <script>
 export default {
   data() {
     return {
-      model: {},
+      model: {
+        nombre: 'Minera',
+        apellido: 'El tajo',
+        rut: '70.567.567-3',
+        direccion: 'Calama',
+        correo: 'mineraeltajo@gmail.com',
+        password: '232323',
+      },
     }
+  },
+  mounted() {
+    this.send()
   },
   methods: {
     send() {
