@@ -45,7 +45,23 @@
           </v-text-field>
         </v-col>
       </v-row>
-      <v-btn color="primary " class="ma-2">Modificar</v-btn>
+      <v-dialog scrollable max-width="300px">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="primary" class="my-4" dark v-bind="attrs" v-on="on">
+            Modificar servicio
+          </v-btn>
+        </template>
+        <v-card class="pa-4">
+          <div class="text-h4">Modificar servicio</div>
+
+          <v-textarea :value="elemento.title" label="Nombre del servicio" />
+          <v-text-field :value="elemento.value" label="Precio del servicio">
+          </v-text-field>
+
+          <v-btn type="primary" color="primary"> Agregar </v-btn>
+        </v-card>
+      </v-dialog>
+
       <v-btn color="primary " class="ma-2">Eliminar</v-btn>
       <v-divider />
     </div>
