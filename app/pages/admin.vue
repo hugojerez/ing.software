@@ -13,6 +13,7 @@
       <v-tab-item> <CompProser /></v-tab-item>
       <v-tab-item>
         <v-text-field
+          v-model="loqueseestabuscando"
           placeholder="Buscar"
           prepend-icon="mdi-magnify"
         ></v-text-field>
@@ -51,6 +52,21 @@ export default {
     CompServicio,
     CompUserList,
     CompCrearUsuario,
+  },
+  data: () => {
+    return {
+      loqueseestabuscando: '',
+    }
+  },
+  watch: {
+    loqueseestabuscando: {
+      handler(valorActual, valorAntiguo) {
+        this.buscar(valorActual)
+      },
+    },
+  },
+  methods: {
+    buscar(textoABuscar) {},
   },
 }
 </script>
