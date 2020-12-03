@@ -106,6 +106,11 @@
         </template>
       </v-simple-table>
     </v-sheet>
+    <div class="text-right">
+      <v-btn to="PanelAdministrador" color="primary" class="my-5">
+        Guardar</v-btn
+      >
+    </div>
     <v-btn to="PanelAdministrador" color="primary" class="my-5">
       Volver atrás</v-btn
     >
